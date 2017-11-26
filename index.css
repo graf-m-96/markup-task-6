@@ -1,3 +1,8 @@
+body
+{
+    min-width: 920px;
+}
+
 .wrapper
 {
     display: grid;
@@ -43,15 +48,22 @@
     align-self: flex-end;
 }
 
-.media-title
+.media > ul
 {
-    padding-left: 40px;
+    margin-top: 12px;
+    padding-left: 0;
+}
+
+.media li
+{
+    padding-top: 8px;
+    font-size: 17px;
 }
 
 .now-media
 {
     display: inline-block;
-    font-size: 22px;
+    font-size: 24px;
     color: #191970;
 }
 
@@ -59,7 +71,7 @@
 {
     padding-left: 10px;
     display: inline-block;
-    font-size: 20px;
+    font-size: 22px;
     color: #00bfff;
 }
 
@@ -67,13 +79,8 @@
 {
     padding-left: 10px;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     color: #808080;
-}
-
-.money-courses
-{
-    padding-left: 40px;
 }
 
 .bold
@@ -86,9 +93,15 @@
     color: #808080;
 }
 
+.setting-and-disk
+{
+    position: relative;
+}
+
 .disk
 {
-    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
 }
 
 .big-a
@@ -117,16 +130,18 @@
 
 .login-title
 {
+    display: block;
     font-size: 20px;
     text-decoration: solid;
+    margin-bottom: 20px;
 }
 
-.login,
-.password,
-.submit
+[type='login'],
+[type='password'],
+[type='submit'],
+[name='foreign-pc']
 {
-    display: block;
-    padding-top: 20px;
+    margin-top: 20px;
 }
 
 .yandex
@@ -145,7 +160,6 @@
 .find
 {
     grid-area: f;
-    margin-left: 20px;
 }
 
 .keywords
@@ -171,7 +185,7 @@
     display: flex;
 }
 
-.find-input
+.find-string > input
 {
     width: calc(100% - 100px);
 }
@@ -205,7 +219,8 @@
     margin: auto;
 }
 
-.find-button:hover
+.find-button:hover,
+.triangle-for-button:hover
 {
     cursor: pointer;
 }
@@ -221,12 +236,12 @@
     color: #808080;
 }
 
-.add-under-find
+.picture-under-search-string
 {
     padding-top: 20px;
 }
 
-.add-under-find > img
+.picture-under-search-string > img
 {
     border: 1px solid #000;
     width: calc(100% - 100px);
@@ -241,16 +256,15 @@
 .widget-column
 {
     display: inline-block;
-    vertical-align: top;
     margin-right: 40px;
     width: 33%;
-    max-width: 33%;
+    min-width: 33%;
+
 }
 
 .widget
 {
     display: none;
-    margin-bottom: 40px;
     font-size: 16px;
 }
 
@@ -258,15 +272,8 @@
 {
     font: 24px Arial serif;
     color: #00f;
-    margin-bottom: 15px;
-}
-
-.widget > .h3
-{
-    font: 24px Arial serif;
-    color: #00f;
-    margin: 20px 0 0;
-    display: inline-block;
+    margin-bottom: 0;
+    padding-bottom: 10px;
 }
 
 .visited > ul,
@@ -275,6 +282,7 @@
 {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 .visited li,
@@ -286,11 +294,6 @@
 .visited span
 {
     font-weight: 600;
-}
-
-.anecdotes
-{
-    position: relative;
 }
 
 .anecdote-1,
@@ -327,75 +330,37 @@
     width: 20px;
 }
 
-.anecdote-button
-{
-    position: absolute;
-
-}
-
-.anecdotes label
+.next-anecdote:hover
 {
     cursor: pointer;
 }
 
-input[id='anecdote-1']:checked ~ .anecdote-5,
-input[id='anecdote-1']:checked ~ .button-5
-{
-    display: none;
-}
-
 input[id='anecdote-1']:checked ~ .anecdote-1,
-input[id='anecdote-1']:checked ~ .button-1
+input[id='anecdote-1']:checked ~ .button-1,
+input[id='anecdote-2']:checked ~ .anecdote-2,
+input[id='anecdote-2']:checked ~ .button-2,
+input[id='anecdote-3']:checked ~ .anecdote-3,
+input[id='anecdote-3']:checked ~ .button-3,
+input[id='anecdote-4']:checked ~ .anecdote-4,
+input[id='anecdote-4']:checked ~ .button-4,
+input[id='anecdote-5']:checked ~ .anecdote-5,
+input[id='anecdote-5']:checked ~ .button-5
 {
     display: block;
 }
 
 input[id='anecdote-2']:checked ~ .anecdote-1,
-input[id='anecdote-2']:checked ~ .button-1
-{
-    display: none;
-}
-
-input[id='anecdote-2']:checked ~ .anecdote-2,
-input[id='anecdote-2']:checked ~ .button-2
-{
-    display: block;
-}
-
+input[id='anecdote-2']:checked ~ .button-1,
 input[id='anecdote-3']:checked ~ .anecdote-2,
-input[id='anecdote-3']:checked ~ .button-2
-{
-    display: none;
-}
-
-input[id='anecdote-3']:checked ~ .anecdote-3,
-input[id='anecdote-3']:checked ~ .button-3
-{
-    display: block;
-}
-
+input[id='anecdote-3']:checked ~ .button-2,
 input[id='anecdote-4']:checked ~ .anecdote-3,
-input[id='anecdote-4']:checked ~ .button-3
-{
-    display: none;
-}
-
-input[id='anecdote-4']:checked ~ .anecdote-4,
-input[id='anecdote-4']:checked ~ .button-4
-{
-    display: block;
-}
-
+input[id='anecdote-4']:checked ~ .button-3,
 input[id='anecdote-5']:checked ~ .anecdote-4,
-input[id='anecdote-5']:checked ~ .button-4
+input[id='anecdote-5']:checked ~ .button-4,
+input[id='anecdote-1']:checked ~ .anecdote-5,
+input[id='anecdote-1']:checked ~ .button-5
 {
     display: none;
-}
-
-input[id='anecdote-5']:checked ~ .anecdote-5,
-input[id='anecdote-5']:checked ~ .button-5
-{
-    display: block;
 }
 
 .tv-image
@@ -417,27 +382,30 @@ input[id='anecdote-5']:checked ~ .button-5
 {
     overflow-y: scroll;
     height: 200px;
-    position: relative;
 }
 
-.shadow
+.text-with-scroll::before
 {
+    content: '';
+    top: 80px;
     z-index: 5;
     width: 100%;
-    height: 35px;
+    height: 40px;
     position: absolute;
     background: linear-gradient(to top, rgba(255, 255, 255, 0),
     rgba(255, 255, 255, 1));
 }
 
-.from-above
+.text-with-scroll::after
 {
-    top: 90px;
-}
-
-.from-below
-{
+    content: '';
     bottom: -10px;
+    z-index: 5;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1));
 }
 
 .text-with-scroll::-webkit-scrollbar
@@ -490,28 +458,36 @@ input[id='anecdote-5']:checked ~ .button-5
 
 .setting-window
 {
+    z-index: 1000;
     display: none;
     border: 1px solid #808080;
     background: #fff;
-    position: absolute;
-    top: 20px;
-    left: 150px;
-    width: 200px;
-    height: 200px;
+    position: relative;
+    width: 100%;
+    height: 220px;
     padding-left: 5px;
     text-align: left;
 }
 
 .setting-window label
 {
-    cursor: pointer;
+    display: block;
 }
 
+.setting-window label,
 label[for='setting']
 {
     cursor: pointer;
 }
 
+input[id='visited']:checked ~ .widgets .column1,
+input[id='anecdotes']:checked ~ .widgets .column1,
+input[id='tv-show']:checked ~ .widgets .column2,
+input[id='car-news']:checked ~ .widgets .column2,
+input[id='weather']:checked ~ .widgets .column3,
+input[id='bung']:checked ~ .widgets .column3,
+input[id='map']:checked ~ .widgets .column3,
+input[id='poster']:checked ~ .widgets .column3,
 input[id='visited']:checked ~ .widgets .visited,
 input[id='anecdotes']:checked ~ .widgets .anecdotes,
 input[id='tv-show']:checked ~ .widgets .tv-show,
@@ -526,23 +502,7 @@ input[id='poster']:checked ~ .widgets .poster
 
 .column1,
 .column2,
-.column3
-{
-    display: none;
-}
-
-input[id='visited']:checked ~ .widgets .column1,
-input[id='anecdotes']:checked ~ .widgets .column1,
-input[id='tv-show']:checked ~ .widgets .column2,
-input[id='car-news']:checked ~ .widgets .column2,
-input[id='weather']:checked ~ .widgets .column3,
-input[id='bung']:checked ~ .widgets .column3,
-input[id='map']:checked ~ .widgets .column3,
-input[id='poster']:checked ~ .widgets .column3
-{
-    display: inline-block;
-}
-
+.column3,
 input[name='show-window'],
 input[name='setting']
 {
@@ -554,6 +514,23 @@ input[id='setting']:checked ~ .setting-and-disk .setting-window
     display: block;
 }
 
+input[id='visited'] ~ .setting-and-disk [for='visited']::before,
+input[id='anecdotes'] ~ .setting-and-disk [for='anecdotes']::before,
+input[id='tv-show'] ~ .setting-and-disk [for='tv-show']::before,
+input[id='car-news'] ~ .setting-and-disk [for='car-news']::before,
+input[id='weather'] ~ .setting-and-disk [for='weather']::before,
+input[id='bung'] ~ .setting-and-disk [for='bung']::before,
+input[id='map'] ~ .setting-and-disk [for='map']::before,
+input[id='poster'] ~ .setting-and-disk [for='poster']::before
+{
+    content: '';
+    background-image: url(picture/uncheck-mark.png);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: contain;
+}
+
 input[id='visited']:checked ~ .setting-and-disk [for='visited']::before,
 input[id='anecdotes']:checked ~ .setting-and-disk [for='anecdotes']::before,
 input[id='tv-show']:checked ~ .setting-and-disk [for='tv-show']::before,
@@ -563,10 +540,5 @@ input[id='bung']:checked ~ .setting-and-disk [for='bung']::before,
 input[id='map']:checked ~ .setting-and-disk [for='map']::before,
 input[id='poster']:checked ~ .setting-and-disk [for='poster']::before
 {
-    content: '';
     background-image: url(picture/check-mark.png);
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-size: contain;
 }
